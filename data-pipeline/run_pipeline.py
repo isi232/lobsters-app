@@ -1,27 +1,3 @@
-"""
-============================================================
-PIPELINE ENTRY POINT — run_pipeline.py
-============================================================
-Role: Data Engineer
-
-This is the script you run to actually pull fresh data from
-Lobsters and store it in the database.
-
-It calls the three pipeline layers IN ORDER:
-    1. fetcher.fetch_top_posts_raw()    → raw Lobsters JSON
-    2. transformer.transform_posts()    → clean list of dicts
-    3. loader.load_posts()              → saved into lobsters.db
-
-Run it from the data-pipeline/ folder with:
-    python run_pipeline.py
-
-You should re-run this periodically (e.g. once a day) to keep
-scores and comment counts up to date. For this student project,
-running it manually whenever you want fresh data is enough —
-in a real production system this would be a scheduled cron job.
-============================================================
-"""
-
 from pipeline.db import init_db
 from pipeline.fetcher import fetch_top_posts_raw
 from pipeline.transformer import transform_posts
